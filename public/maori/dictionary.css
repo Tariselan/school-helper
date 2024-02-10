@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue color */
+}
+
+.container {
+    max-width: 600px;
+    width: 60%; /* 60% width */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Blue background color */
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#wordTable {
+    width: 100%;
+    border-collapse: collapse; /* Collapse table borders */
+    margin: 20px 0;
+}
+
+#wordTable th, #wordTable td {
+    padding: 8px;
+    border: 1px solid #555; /* Dark grey borders */
+}
+
+#wordTable th {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    text-align: left;
+}
+
+#wordTable td {
+    background-color: #ffffff; /* Light grey background color */
+}
+
+.action-button.remove-button {
+    padding: 6px 12px;
+    background-color: #dc3545; /* Red remove button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.action-button.remove-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}

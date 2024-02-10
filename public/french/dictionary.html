@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>French Dictionary</title>
+        <script src="client.js"></script>
+        <link rel="stylesheet" href="dictionary.css">
+    </head>
+    <body>
+        <h1 style="cursor: pointer;"><a href="../index.html" >French Dictionary</a></h1>
+        
+        <div class="container">
+            <!-- Form to add new word -->
+            <form id="addWordForm">
+                <label for="wordInput">Word:</label>
+                <input type="text" id="wordInput" required>
+                <label for="meaningInput">Meaning:</label>
+                <input type="text" id="meaningInput" required>
+                <button type="submit">Add Word</button>
+            </form>
+        </div>
+        <div class="container">
+            <!-- Table to display words -->
+            <table id="wordTable">
+                <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Meaning</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="wordTableBody">
+                    <!-- Words will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
