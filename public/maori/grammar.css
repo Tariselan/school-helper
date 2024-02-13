@@ -87,6 +87,12 @@ p {
     margin-top: 10px;
 }
 
+.QuoteMaori,
+.QuoteEnglish {
+    display: block;
+    text-align: left;
+}
+
 .explanation {
     border-left: 3px solid #007bff; /* Blue border on the left */
     padding-left: 10px; /* Add some padding to separate content from the border */
