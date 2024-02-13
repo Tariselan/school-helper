@@ -18,70 +18,682 @@
                 <!-- Add more main topics as needed -->
             </ul>
         </nav>
-        <section id="sentences">
-            <h2>Sentences</h2>
-            <section>
-                <h3>Definite & Equative</h3>
-                <p>Explanation of definite and equative sentences...</p>
+        <script>
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+let lastScrollTop = 0;
+let isNavSticky = false;
+
+window.addEventListener('scroll', throttle(function() {
+    var nav = document.querySelector('nav');
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (!(scrollTop === 0) && nav.offsetTop > 129) {
+        if (!isNavSticky) {
+            nav.classList.add('sticky');
+            isNavSticky = true;
+        }
+        console.log("AHAH")
+    } else {
+        if (isNavSticky) {
+            nav.classList.remove('sticky');
+            isNavSticky = false;
+        }
+    }
+}, 60)); // Adjust throttle limit as needed (100ms in this example
+            </script>
+        </script>
+        <main>
+            <section id="sentences">
+                <h2>Sentences</h2>
+                <section>
+                    <h3>Definite Phrases & Equative Sentences</h3>
+                    <div class="explanation">
+                        <h4>Definite Phrases</h4>
+                    </div>
+                    <div class="explanation">
+                        <p>Definite phrases and sentences are indicated by the particle <strong>Ko</strong>.</p>
+                        <p>A definite phrase indicates something/someone we are referring to specifically. For example: The boy, as opposed to A boy. In this example, we are referring to someone in particular (the boy), as opposed to a non-specified boy (a boy). <strong>Ko</strong> is specific.</p>
+                        <p>A definite phrase may also contain what we refer to as 'definite articles' <em>te</em> and <em>ngā</em>. <em>Te</em> is the Māori word for 'the - singular' and <em>ngā</em> is the Māori word for 'the - plural' (see example below).</p>
+                    </div>
+                    <div class="explanation">
+                        <ul class="example-list">
+                            <li><strong>Ko te ngeru.</strong><br>The cat. (singular - 1 cat)</li>
+                            <li><strong>Ko ngā ngeru.</strong><br>The cats. (plural - more than 1 cat)</li>
+                        </ul>
+                    </div>
+                    <div class="explanation">
+                        <h4>Equative Sentences (Definite Sentences)</h4>
+                        <p>An equative sentence (also called definite) consists of a definite phrase and a subject, for example:</p>
+                        <p>Definite phrase + Subject</p>
+                        <ul class="example-list">
+                            <li><strong>Ko te ngeru</strong> + tērā.<br>That is the cat. (singular - 1 cat)</li>
+                            <li><strong>Ko ngā ngeru</strong> + ērā.<br>Those are the cats. (plural - more than 1 cat)</li>
+                            <li><strong>Ko ia</strong> + te kaiako.<br>He is the teacher.</li>
+                            <li><strong>Ko tēnei whare</strong> + te whare o Hone.<br>This house is Hone's house.</li>
+                        </ul>
+                        <p>In the examples above, <em>tērā</em> and <em>ērā</em> are examples of...</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Indefinite Phrases & Classifying Sentences</h3>
+                    <div class="explanation">
+                        <h4>Indefinite Phrases</h4>
+                    </div>
+                    <div class="explanation">
+                        <p>Indefinite phrases and sentences are indicated by the word <strong>He</strong>.</p>
+                        <p><strong>Indefinite Phrases:</strong><br>
+                        <strong>He</strong> + noun.</p>
+                        <p>For example:</p>
+                        <ul class="example-list">
+                            <li><strong>He kiore.</strong><br>A rat (or some rats).</li>
+                        </ul>
+                    </div>
+                    <div class="explanation">
+                        <p>Contrast this with the following definite phrases in which we know specifically which rat or rats we are talking about:</p>
+                        <ul class="example-list">
+                            <li><strong>Ko te kiore.</strong><br>The rat.</li>
+                            <li><strong>Ko ngā kiore.</strong><br>The rats.</li>
+                        </ul>
+                    </div>
+                    <div class="explanation">
+                        <h4>Classifying Sentences</h4>
+                        <p><strong>He</strong> + noun / adjective + subject.</p>
+                        <p>For example:</p>
+                        <ul class="example-list">
+                            <li><strong>He pukapuka tenei.</strong><br>This is a book.</li>
+                            <li><strong>He wahine ia.</strong><br>She is a woman.</li>
+                            <li><strong>He māhana tēnei waina.</strong><br>This wine is warm.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>Active Sentences</h3>
+                    <div class="explanation">
+                        <p>Active sentences are constructed using the following form:</p>
+                        <p><strong>Tense</strong> + verb + subject + i/ki + object.</p>
+                        <p>For example:</p>
+                        <ul class="example-list">
+                            <li><strong>Kei te haere au ki te hui.</strong><br>I am going to the meeting.</li>
+                        </ul>
+                        <p>In English, the form of the verb changes depending on the tense, for example, go, going, went, etc. In Māori, only the tense marker changes; the verb always stays the same. Take, for example, the verb <em>haere</em>, which means "go".</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tense marker</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Past perfect</td>
+                                    <td>Kua haere au.</td>
+                                </tr>
+                                <tr>
+                                    <td>Past</td>
+                                    <td>I haere au.</td>
+                                </tr>
+                                <tr>
+                                    <td>Present</td>
+                                    <td>Kei te haere au.</td>
+                                </tr>
+                                <tr>
+                                    <td>Continuous</td>
+                                    <td>E haere ana au.</td>
+                                </tr>
+                                <tr>
+                                    <td>Future</td>
+                                    <td>Ka haere au.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><strong>Notes:</strong></p>
+                        <ul>
+                            <li><em>e (verb) ana</em> - continuous tense: This tense is called a continuous tense because it can denote a verb-ing word in any tense.</li>
+                            <li><em>Ka</em> - future tense or next action: <em>Ka</em> is not limited to indicating future action; it can also be used to indicate that something happens next.</li>
+                        </ul>
+                        <p>For example:</p>
+                        <ul class="example-list">
+                            <li><em>E haere ana au.</em><br>I am going.</li>
+                            <li><em>Ka hoki mai ia.</em><br>He will return.</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h3>Passive Sentences</h3>
+                    <div class="explanation">
+                        <p>Within active sentences, the focus is on the agent (whoever or whatever is doing the verb), however, passive sentences focus on the patient of the verb (the receiver of the action). Passive sentences change the focus to whoever or whatever is affected by the verb (the patient).</p>
+                        <p>Following is an example of the construction of a passive sentence. Note that passive sentences use the same tense markers as active sentences.</p>
+                        <p><strong>Tense</strong> + verb(passivised) + patient + e + agent</p>
+                        <p><strong>Example:</strong></p>
+                        <ul class="example-list">
+                            <li><strong>Kua hangaia te marae e ngā tohunga.</strong><br>The marae has been built by the experts.</li>
+                        </ul>
+                        <p>Compare this with the active form:</p>
+                        <ul class="example-list">
+                            <li><strong>Kua hanga ngā tohunga i te marae.</strong><br>The experts have built the marae.</li>
+                        </ul>
+                        <p>Notice the differences which take place:</p>
+                        <ul>
+                            <li>There is a 'tail' or passive ending on the verb.</li>
+                            <li>The direct object marker 'i' has been deleted.</li>
+                            <li>The word e comes before the agent.</li>
+                        </ul>
+                        <p>There are special affixes or 'tails' which go on the ends of verbs in passive sentences. These 'tails' depend on which verb you use.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Passive</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>kōrero(tia)</td>
+                                    <td>speak / talk</td>
+                                    <td>I korerotia ngā kupu e te tama.<br>The words were spoken by the boy.</td>
+                                </tr>
+                                <tr>
+                                    <td>tango(hia)</td>
+                                    <td>remove / take off</td>
+                                    <td>Kua tangohia ōku hū.<br>My shoes have been removed.</td>
+                                </tr>
+                                <tr>
+                                    <td>mahi(a)</td>
+                                    <td>work</td>
+                                    <td>Kua mahia te mahi e au.<br>The work has been finished by me.</td>
+                                </tr>
+                                <tr>
+                                    <td>hanga(ia)</td>
+                                    <td>build</td>
+                                    <td>Kua hangaia te marae e ngā tohunga.<br>The marae has been built by the experts.</td>
+                                </tr>
+                                <tr>
+                                    <td>whai (whāia)</td>
+                                    <td>chase, pursue</td>
+                                    <td>I whāia au e te pūru.<br>I was chased by the bull.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Not all verbs have a passive form.</p>
+                        <p>Passive sentences are used much more frequently in Māori. Note that in the examples above, the English translations may sometimes seem unnatural; therefore, it is sometimes best to switch between passive and active when translating between Māori and English.</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Agent Emphatic</h3>
+                    <div class="explanation">
+                        <p>The Agent Emphatic emphasises the agent as the doer of the verb. It is only used for past tense and future tense sentences.</p>
+                        <p>The formulas are as follows:</p>
+                        <p><strong>Past tense:</strong><br>
+                        Nā + agent + subject + i + verb<br>
+                        Example: Nā + te kōtiro + te taramu + i + patu<br>
+                        <strong>Nā te kōtiro te taramu i patu.</strong><br>
+                        It was the girl who hit the drum.<br>
+                        <em>or with spoken emphasis:</em><br>
+                        The girl hit the drum.</p>
+                        <p><strong>Future tense:</strong><br>
+                        Mā + agent + subject + e + verb<br>
+                        Example: Mā + te kōtiro + te taramu + e + patu<br>
+                        <strong>Mā te kōtiro te taramu e patu.</strong><br>
+                        It will be the girl who will hit the drum.<br>
+                        <em>or with spoken emphasis:</em><br>
+                        The girl will hit the drum.</p>
+                        <p>There are special singular pronoun forms, which are as follows:</p>
+                        <table class="custom-table">
+                            <tbody>
+                                <tr>
+                                    <td class="blank">&nbsp;</td>
+                                    <td class="blank">&nbsp;</td>
+                                    <th style="width: 100px;">Pronoun</th>
+                                    <th>Example</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">First person</th>
+                                    <th>
+                                        <p align="center">Past</p>
+                                    </th>
+                                    <td>
+                                        <p align="center">Nāku</p>
+                                    </td>
+                                    <td>
+                                        <span class="QuoteMaori" lang="mi">Nāku ngā pereti i horoi.</span><br>
+                                        <span class="QuoteEnglish" lang="en">I washed the plates.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p align="center">Future</p>
+                                    </th>
+                                    <td>
+                                        <p align="center">Māku</p>
+                                    </td>
+                                    <td>
+                                        <span class="QuoteMaori" lang="mi">Māku te kōtiro e korero.</span><br>
+                                        <span class="QuoteEnglish" lang="en">I will speak to the girl.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">Second person</th>
+                                    <th>
+                                        <p align="center">Past</p>
+                                    </th>
+                                    <td>
+                                        <p align="center">Nāu</p>
+                                    </td>
+                                    <td>
+                                        <span class="QuoteMaori" lang="mi">Nāu te mahi uaua i mahi.</span><br>
+                                        <span class="QuoteEnglish" lang="en">You did the hard work.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p align="center">Future</p>
+                                    </th>
+                                    <td>
+                                        <p align="center">Māu</p>
+                                    </td>
+                                    <td>
+                                        <span class="QuoteMaori" lang="mi">Māu te ruma e whakarite.</span><br>
+                                        <span class="QuoteEnglish" lang="en">You will tidy the room.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">Third person</th>
+                                    <th>
+                                        <p align="center">Past</p>
+                                    </th>
+                                    <td>
+                                        <p align="center">Nāna</p>
+                                    </td>
+                                    <td>
+                                        <span class="QuoteMaori" lang="mi">Nāna te parāoa i tunu.</span><br>
+                                        <span class="QuoteEnglish" lang="en">He baked the bread.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <p align="center">Future</p>
+                                    </th>
+                                    <td>
+                                        <p align="center">Māna</p>
+                                    </td>
+                                    <td>
+                                        <span class="QuoteMaori" lang="mi">Māna te kanikani e haere.</span><br>
+                                        <span class="QuoteEnglish" lang="en">It will be her that goes to the dance.</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <style>
+                            .custom-table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                border-spacing: 0;
+                            }
+            
+                            .custom-table th,
+                            .custom-table td {
+                                border: 1px solid #ddd;
+                                padding: 8px;
+                                text-align: center;
+                            }
+            
+                            .custom-table th {
+                                background-color: #f2f2f2;
+                            }
+            
+                            .custom-table .blank {
+                                width: 20px;
+                            }
+            
+                            .QuoteMaori,
+                            .QuoteEnglish {
+                                display: block;
+                                text-align: left;
+                            }
+                        </style>
+                        <p>Note the similarity of these pronouns to the 'a' forms used in N-, M- possession.</p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Locatives</h3>
+                    <p>A locative phrase describes the location of something in place or time.</p>
+                    <p>Kei roto ngā rākau i te wao. (There are trees in the forest.)</p>
+                    <p>The basic formula for a locative phrase is:</p>
+                    <p>Preposition + location/locative noun + subject + i + place.</p>
+                    <p>In the above example:</p>
+                    <ul>
+                        <li>Preposition = Kei (present tense)</li>
+                        <li>Locative noun = roto (in)</li>
+                        <li>Subject = ngā rākau (the trees)</li>
+                        <li>Preposition = i</li>
+                        <li>Place = wao (forest).</li>
+                    </ul>
+                    <p>As well as 'Kei', there are two other locative tense markers - 'I' (past) and 'Hei' (future).</p>
+                    <table class="locative-table">
+                        <thead>
+                            <tr>
+                                <th>Tense marker</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I</td>
+                                <td>I runga te pene i te tēpu. (The pen was on the table.)</td>
+                            </tr>
+                            <tr>
+                                <td>Kei</td>
+                                <td>Kei roto ngā rākau i te wao. (There are trees in the forest.)</td>
+                            </tr>
+                            <tr>
+                                <td>Hei</td>
+                                <td>Hei korā ahau. (I will be there.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>Here is a list of some locative nouns.</p>
+                    <p>To ask a question about location, you can typically place the word hea in the place that the locative noun would normally occur, for example:</p>
+                    <p>Kei hea te waka? (Where is the waka?)</p>
+                    <p>Kei tātahi te waka. (The waka is at the beach.)</p>
+                    <style>
+                        .locative-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            border-spacing: 0;
+                        }
+            
+                        .locative-table th,
+                        .locative-table td {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                            text-align: center;
+                        }
+            
+                        .locative-table th {
+                            background-color: #f2f2f2;
+                        }
+                    </style>
+                </section>
+                <section>
+                    <h3>Negatives</h3>
+                    <p>Explanation of negative sentences...</p>
+                    <h4>Answering a closed question</h4>
+                    <p>Ka haere atu koe ki te kanikani? (Will you go to the dance?)</p>
+                    <p>Kāo! (No!)</p>
+                    <h4>Definite sentences</h4>
+                    <p>Ko tērā tāne te rangatira. (That man's the boss.)</p>
+                    <p>Ehara tērā tāne i te rangatira. (That man is not the boss.)</p>
+                    <h4>Negating an adjective</h4>
+                    <p>Kei te whero te pōtae. (The hat is red.)</p>
+                    <p>Kāore te pōtae i te whero. (The hat is not red.)</p>
+                    <h4>Verbal sentences</h4>
+                    <p>Active sentences are negated using the following form:</p>
+                    <p>Kāore + subject + tense marker + verb (+ i/ki + object and other phrases)</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Active</th>
+                                <th>Negative</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kua haere au ki te marae.</td>
+                                <td>Kāore ano au kia haere ki te marae.</td>
+                            </tr>
+                            <tr>
+                                <td>I haere au ki te marae.</td>
+                                <td>Kāore au i haere ki te marae.</td>
+                            </tr>
+                            <tr>
+                                <td>Kei te haere au ki te marae.</td>
+                                <td>Kāore au i te haere ki te marae.</td>
+                            </tr>
+                            <tr>
+                                <td>E haere ana au ki te marae.</td>
+                                <td>Kāore au e haere ana ki te marae.</td>
+                            </tr>
+                            <tr>
+                                <td>Ka haere au ki te marae</td>
+                                <td>Kāore au e haere ki te marae.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Passive</h4>
+                    <p>A passive sentence follows the same form, for example,</p>
+                    <p>I hangaia te whare e Bob. (The house was built by Bob.)</p>
+                    <p>Kāore te whare i hangaia e Bob. (The house was not built by Bob.)</p>
+                    <h4>Locative sentences</h4>
+                    <p>A locative sentence, no matter what the tense, is always negated using 'i', for example,</p>
+                    <p>Kei runga te pene i te tēpu. (The pen is on the table.)</p>
+                    <p>Kāore te pene i runga i te tēpu. (The pen is not, was not, will not be... on the table.)</p>
+                    <p>Note that a locative phrase as part of an active sentence follows the active sentence rules above, for example,</p>
+                    <p>Ka moe au ki tātahi. (I will sleep at the beach.)</p>
+                    <p>Kāore au e moe ki tātahi. (I will not sleep at the beach.)</p>
+                    <h4>The Agent Emphatic</h4>
+                    <p>Agent emphatic sentences can be negated by simply prefixing them with Ehara, for example:</p>
+                    <p>Nā rātou te whare i hanga. (They built the house.)</p>
+                    <p>Ehara nā rātou te whare i hanga. (They didn't build the house.)</p>
+                    <p>Agent emphatic sentences may also be negated as follows:</p>
+                    <p>Ehara i a rātou te whare i hanga. (They didn't build the house.)</p>
+                    <h4>Do not - Kaua e</h4>
+                    <p>Patua te taramu! (Hit the drum!)</p>
+                    <p>Kaua e patua te taramu! (Don't hit the drum!)</p>
+                    <h4>Stop/cease - Kāti</h4>
+                    <p>Kāti te tangi! (Stop crying!)</p>
+                </section>
+                <section>
+                    <h3>Questions</h3>
+                    <p>Explanation of question sentences...</p>
+                    <h4>Tone of voice</h4>
+                    <p>You can make a sentence a question by changing the way you say it. For example:</p>
+                    <p>Kei te whiti te rā. (The sun is shining.)</p>
+                    <p>Kei te whiti te rā? (Is the sun shining?)</p>
+                    <p>Kei roto te kai i te umu. (The food is in the oven.)</p>
+                    <p>Kei roto te kai i te umu? (Is the food in the oven?)</p>
+                    <p>He waka tōna. (She has a waka.)</p>
+                    <p>He waka tōna? (Does she have a waka?)</p>
+                    <p>He inu māu. (A drink for you.)</p>
+                    <p>He inu māu? (Would you like a drink?)</p>
+                    <h4>Aē, Kāo: Yes, No</h4>
+                    <p>To answer a closed question, you can use Āe or Kāo.</p>
+                    <p>Kei roto te kai i te umu? (Is the food in the oven?)</p>
+                    <p>Āe! (Yes!)</p>
+                    <p>Kāo! (No!)</p>
+                    <p>or you might answer in full:</p>
+                    <p>Āe! Kei roto te kai i te umu. (Yes! The food is in the oven.)</p>
+                    <p>Kāo! Kāore te kai i roto i te umu. (No! The food is not in the oven.)</p>
+                    <p>or Kāo! Kei runga  te kai i te tēpu. (No! The food is on the table.)</p>
+                    <h4>Interrogatives - wai, hea, aha...</h4>
+                    <p>To request information, you can use interrogatives - wai, hea, aha (who, where, what) etc.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>wai</td>
+                                <td>
+                                    <p>Ko wai koe? (Who are you?)</p>
+                                    <p>Ko wai te ingoa o tērā wahine? (What's the name of that woman?)</p>
+                                    <p>I hoatu koe i te koha ki a wai? (To whom did you give the koha?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>aha</td>
+                                <td>
+                                    <p>He aha tēnei? (What's this?)</p>
+                                    <p>E kimi ana ia ki te aha? (What's he searching for?)</p>
+                                    <p>Kei te aha ia? (What is she doing?)</p>
+                                    <p>Hei aha tēnei? (For what purpose is this?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>hea</td>
+                                <td>
+                                    <p>Kei hea te waka? (Where is the waka?)</p>
+                                    <p>Ka haere ia ki hea? (To where is he going?)</p>
+                                    <p>Kua hoki mai koe i hea? (From where have you returned?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>nō hea</td>
+                                <td>
+                                    <p>Nō hea koe? (Where are you from?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>āhea</td>
+                                <td>
+                                    <p>Āhea te kēmu? (When's the game?)</p>
+                                    <p>Nōnahea koe i hoki mai ai? (When did you return?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>e hia, tokohia</td>
+                                <td>
+                                    <p>E hia ngā ika kei roto i tōu kete? (How many fish are in your kete?)</p>
+                                    <p>Tokohia ngā tangata e haere mai? (How many people are coming?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>pēhea</td>
+                                <td>
+                                    <p>Kei te pēhea koe? (How are you?)</p>
+                                    <p>I pēhea tāu kai? (What was your food like?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>tēhea, ēhea</td>
+                                <td>
+                                    <p>Ko tēhea te kapu pai ki a koe? (Which cup do you like?)</p>
+                                    <p>Ko ēhea ngā pukapuka kua pānuitia e koe? (Which books have you read?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>rānei</td>
+                                <td>
+                                    <p>He waina whero, he [waina] mā rānei? (A red or white wine?)</p>
+                                    <p>Ka haere koe ki te mahi, ka noho rānei i te kāinga? (Are you going to work or staying at home?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>he aha...ai</td>
+                                <td>
+                                    <p>He aha ia i haere ai? (Why did he go?)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>nā te aha...ai</td>
+                                <td>
+                                    <p>Nā te aha koe i mataku ai? (What frightened you?)</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h3>Commands</h3>
+                    <p>Explanation of command sentences...</p>
+                    <h4>Simple active form</h4>
+                    <p>Haere mai!</p>
+                    <p>Come here!</p>
+                    <p>E noho!</p>
+                    <p>Sit!</p>
+                    <p>E tū!</p>
+                    <p>Stand!</p>
+                    <p>Note that 'E' precedes the verb if it contains 2 short vowels or fewer (note that long vowels contain 2 short vowels, therefore a word like 'tū' stand contains two short vowels and requires 'E' before it). 'E' occurs most frequently before commands, but also Māori proper names when addressing somebody e.g (E Mere) and also terms of address e.g (E kui). It also occurs before numbers 2-9 in certain contexts (see numbers).</p>
+                    <p>The active form of the verb is also used where an object is specified and the appropriate preposition is 'ki', for example:</p>
+                    <p>Whakarongo ki ngā whaea!</p>
+                    <p>Listen to the aunties!</p>
+                    <p>Note the similarity of this command to the active sentence 'Ka whakarongo koe ki ngā whaea.'</p>
+                    <h4>Simple passive form</h4>
+                    <p>The passive form is used where the person commanded is to act on a thing, and which in an active sentence would take 'i' rather than 'ki', for example:</p>
+                    <p>Patua te pōro!</p>
+                    <p>Hit the ball!</p>
+                    <p>Note the similarity of this command to the passive sentence 'Ka patua te pōro e koe' and that when converted to an active sentence this would contain i: 'Ka patu koe i te pōro.'</p>
+                    <p>This is quite different from English - it is not possible to simply translate these commands into English while maintaining the passive voice. Here are some more examples:</p>
+                    <p>Horoia ngā kākahu!</p>
+                    <p>Wash the clothes!</p>
+                    <p>Whakakoia te māripi!</p>
+                    <p>Sharpen the knife!</p>
+                    <h4>Me - Should</h4>
+                    <p>Me haere koe ki te kāinga!</p>
+                    <p>You should go home!</p>
+                    <p>Me whakarongo koe ki tōu whaea!</p>
+                    <p>You should listen to your aunty!</p>
+                    <p>Note that the passive form of a verb is never used after Me even though it may be used in a passive sense, e.g.,</p>
+                    <p>Me horoi ngā kākahu [e koe]!</p>
+                    <p>[You] should wash the clothes!</p>
+                    <h4>Kia</h4>
+                    <p>Kia kaha!</p>
+                    <p>Be strong!</p>
+                    <p>Kia tūpato te tapahi!</p>
+                    <p>Cut carefully!</p>
+                    <h4>Ka...tāua, Ka...tātou - Let's</h4>
+                    <p>Ka haere tāua ki te toa!</p>
+                    <p>Let's go to the shop! (2 people including the speaker)</p>
+                    <p>Ka waiata tātou.</p>
+                    <p>Let's sing! (3 or more people)</p>
+                    <h4>Taihoa - Don't yet, wait</h4>
+                    <p>Taihoa e oma!</p>
+                    <p>Don't run yet.</p>
+                    <p>Taihoa e tunu i ngā ika!</p>
+                    <p>Don't cook the fish yet.</p>
+                    <p>Taihoa!</p>
+                    <p>Wait!</p>
+                    <h4>Kaua e - Do not</h4>
+                    <p>Kaua e whakarongo ki tōu whaea!</p>
+                    <p>Don't listen to your aunty!</p>
+                    <p>Kaua e patua te kurī!</p>
+                    <p>Don't hit the dog!</p>
+                    <h4>Kāti - Stop, cease</h4>
+                    <p>Kāti te tangi!</p>
+                    <p>Stop crying!</p>
+                </section>
+                <!-- Add more subtopics for sentences as needed -->
             </section>
-            <section>
-                <h3>Indefinite & Classifying</h3>
-                <p>Explanation of indefinite and classifying sentences...</p>
+            <section id="verbs">
+                <h2>Verbs</h2>
+                <section>
+                    <h3>Verb Conjugation</h3>
+                    <p>Explanation of verb conjugation...</p>
+                </section>
+                <section>
+                    <h3>Verb Tenses</h3>
+                    <p>Explanation of verb tenses...</p>
+                </section>
+                <!-- Add more subtopics for verbs as needed -->
             </section>
-            <section>
-                <h3>Active</h3>
-                <p>Explanation of active sentences...</p>
+            <section id="possession">
+                <h2>Possession</h2>
+                <section>
+                    <h3>Possessive Pronouns</h3>
+                    <p>Explanation of possessive pronouns...</p>
+                </section>
+                <section>
+                    <h3>Possession Markers</h3>
+                    <p>Explanation of possession markers...</p>
+                </section>
+                <!-- Add more subtopics for possession as needed -->
             </section>
-            <section>
-                <h3>Passive</h3>
-                <p>Explanation of passive sentences...</p>
-            </section>
-            <section>
-                <h3>Agent emphatic</h3>
-                <p>Explanation of agent emphatic sentences...</p>
-            </section>
-            <section>
-                <h3>Locatives</h3>
-                <p>Explanation of locatives sentences...</p>
-            </section>
-            <section>
-                <h3>Negatives</h3>
-                <p>Explanation of negative sentences...</p>
-            </section>
-            <section>
-                <h3>Questions</h3>
-                <p>Explanation of question sentences...</p>
-            </section>
-            <section>
-                <h3>Commands</h3>
-                <p>Explanation of command sentences...</p>
-            </section>
-            <!-- Add more subtopics for sentences as needed -->
-        </section>
-        <section id="verbs">
-            <h2>Verbs</h2>
-            <section>
-                <h3>Verb Conjugation</h3>
-                <p>Explanation of verb conjugation...</p>
-            </section>
-            <section>
-                <h3>Verb Tenses</h3>
-                <p>Explanation of verb tenses...</p>
-            </section>
-            <!-- Add more subtopics for verbs as needed -->
-        </section>
-        <section id="possession">
-            <h2>Possession</h2>
-            <section>
-                <h3>Possessive Pronouns</h3>
-                <p>Explanation of possessive pronouns...</p>
-            </section>
-            <section>
-                <h3>Possession Markers</h3>
-                <p>Explanation of possession markers...</p>
-            </section>
-            <!-- Add more subtopics for possession as needed -->
-        </section>
+        </main>
         <!-- Add more main topics sections as needed -->
     </body>
 </html>
