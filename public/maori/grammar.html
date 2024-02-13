@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Maori Grammar</title>
         <link rel="stylesheet" href="grammar.css">
+        <link rel="stylesheet" href="grammar_tables.css">
     </head>
     <body>
         <header>
@@ -18,41 +19,7 @@
                 <!-- Add more main topics as needed -->
             </ul>
         </nav>
-        <script>
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-let lastScrollTop = 0;
-let isNavSticky = false;
-
-window.addEventListener('scroll', throttle(function() {
-    var nav = document.querySelector('nav');
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (!(scrollTop === 0) && nav.offsetTop > 129) {
-        if (!isNavSticky) {
-            nav.classList.add('sticky');
-            isNavSticky = true;
-        }
-        console.log("AHAH")
-    } else {
-        if (isNavSticky) {
-            nav.classList.remove('sticky');
-            isNavSticky = false;
-        }
-    }
-}, 60)); // Adjust throttle limit as needed (100ms in this example
-            </script>
+        <script src="grammar.js"></script>
         </script>
         <main>
             <section id="sentences">
@@ -61,19 +28,13 @@ window.addEventListener('scroll', throttle(function() {
                     <h3>Definite Phrases & Equative Sentences</h3>
                     <div class="explanation">
                         <h4>Definite Phrases</h4>
-                    </div>
-                    <div class="explanation">
                         <p>Definite phrases and sentences are indicated by the particle <strong>Ko</strong>.</p>
                         <p>A definite phrase indicates something/someone we are referring to specifically. For example: The boy, as opposed to A boy. In this example, we are referring to someone in particular (the boy), as opposed to a non-specified boy (a boy). <strong>Ko</strong> is specific.</p>
                         <p>A definite phrase may also contain what we refer to as 'definite articles' <em>te</em> and <em>ngā</em>. <em>Te</em> is the Māori word for 'the - singular' and <em>ngā</em> is the Māori word for 'the - plural' (see example below).</p>
-                    </div>
-                    <div class="explanation">
                         <ul class="example-list">
                             <li><strong>Ko te ngeru.</strong><br>The cat. (singular - 1 cat)</li>
                             <li><strong>Ko ngā ngeru.</strong><br>The cats. (plural - more than 1 cat)</li>
                         </ul>
-                    </div>
-                    <div class="explanation">
                         <h4>Equative Sentences (Definite Sentences)</h4>
                         <p>An equative sentence (also called definite) consists of a definite phrase and a subject, for example:</p>
                         <p>Definite phrase + Subject</p>
@@ -83,15 +44,12 @@ window.addEventListener('scroll', throttle(function() {
                             <li><strong>Ko ia</strong> + te kaiako.<br>He is the teacher.</li>
                             <li><strong>Ko tēnei whare</strong> + te whare o Hone.<br>This house is Hone's house.</li>
                         </ul>
-                        <p>In the examples above, <em>tērā</em> and <em>ērā</em> are examples of...</p>
                     </div>
                 </section>
                 <section>
                     <h3>Indefinite Phrases & Classifying Sentences</h3>
                     <div class="explanation">
                         <h4>Indefinite Phrases</h4>
-                    </div>
-                    <div class="explanation">
                         <p>Indefinite phrases and sentences are indicated by the word <strong>He</strong>.</p>
                         <p><strong>Indefinite Phrases:</strong><br>
                         <strong>He</strong> + noun.</p>
@@ -99,15 +57,11 @@ window.addEventListener('scroll', throttle(function() {
                         <ul class="example-list">
                             <li><strong>He kiore.</strong><br>A rat (or some rats).</li>
                         </ul>
-                    </div>
-                    <div class="explanation">
                         <p>Contrast this with the following definite phrases in which we know specifically which rat or rats we are talking about:</p>
                         <ul class="example-list">
                             <li><strong>Ko te kiore.</strong><br>The rat.</li>
                             <li><strong>Ko ngā kiore.</strong><br>The rats.</li>
                         </ul>
-                    </div>
-                    <div class="explanation">
                         <h4>Classifying Sentences</h4>
                         <p><strong>He</strong> + noun / adjective + subject.</p>
                         <p>For example:</p>
