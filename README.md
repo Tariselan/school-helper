@@ -12,7 +12,10 @@ npm install sqlite3
 ```
 
 # 3. Running the program!
-Open up the folder inside your favourite IDE or just navigate there via your command prompt, console, or terminal. Then run `node app.js`
+Open up the folder inside your favourite IDE or just navigate there via your command prompt, console, or terminal. Then run:
+ ```bash
+ node app.js
+ ```
 
 The terminal should then say:
 ```bash
