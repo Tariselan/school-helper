@@ -56,8 +56,9 @@ form button {
 form button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
+
 #wordTable {
-    width: 60%;
+    width: 100%;
     border-collapse: collapse; /* Collapse table borders */
     margin: 20px auto;
 }
@@ -71,12 +72,24 @@ form button:hover {
     background-color: #007bff; /* Blue background color */
     color: #fff; /* White text color */
     text-align: left;
+    width: 25%; /* Equal width for each column */
 }
 
 #wordTable td {
     background-color: #ffffff; /* Light grey background color */
-    width: 50%; /* Two words per row */
+    width: 25%; /* Equal width for each column */
 }
+
+/* Adjust width for action columns and gap */
+#wordTable .action-button {
+    width: auto; /* Adjust width for action buttons */
+}
+
+#wordTable td:nth-child(3),
+#wordTable td:nth-child(6) {
+    width: 1%; /* Adjust width for gap column */
+}
+
 .action-button.remove-button {
     padding: 6px 12px;
     background-color: #dc3545; /* Red remove button */
