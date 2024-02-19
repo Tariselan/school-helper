@@ -6,13 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 const tableBody = document.getElementById('wordTableBody');
                 tableBody.innerHTML = ''; // Clear existing table rows
+                
                 // Sort words alphabetically by word
                 data.sort((a, b) => a.word.localeCompare(b.word));
-                data.forEach(word => {
+                
+                // Iterate over the data and create table rows with two words per row
+                for (let i = 0; i < data.length; i += 2) {
                     const row = tableBody.insertRow();
-                    // Insert word and meaning into table
-                    row.innerHTML = `<td>${word.word}</td><td>${word.meaning}</td><td><button class="action-button remove-button" data-word="${word.word}">Remove</button></td>`;
-                });
+                    // Insert first word
+                    if (data[i]) {
+                        row.innerHTML += `
+                            <td>${data[i].word}</td>
+                            <td>${data[i].meaning}</td>
+                            <td><button class="action-button remove-button" data-word="${data[i].word}">Remove</button></td>
+                        `;
+                    }
+                    // Insert empty gap column
+                    row.innerHTML += `<td></td>`;
+                    // Insert second word if available
+                    if (data[i + 1]) {
+                        row.innerHTML += `
+                            <td>${data[i + 1].word}</td>
+                            <td>${data[i + 1].meaning}</td>
+                            <td><button class="action-button remove-button" data-word="${data[i + 1].word}">Remove</button></td>
+                        `;
+                    }
+                }
             })
             .catch(error => console.error('Error fetching words:', error));
     };
