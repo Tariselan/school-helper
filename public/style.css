@@ -19,11 +19,12 @@ body {
 .language-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .language-section {
-    width: 45%;
+    width: 40%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
