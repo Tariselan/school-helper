@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Test</title>
-    </head>
-    <body>
-        
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Māori Test</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="../shared_style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">Māori Grammar</a></h1>
+    </header>
+    <main>
+        <div id="gameContainer">
+            <h2>Translate the following word:</h2>
+            <p id="wordToTranslate"></p>
+            <form id="translationForm">
+                <label for="translationInput">Your Translation:</label>
+                <input type="text" id="translationInput" required>
+                <button type="submit">Check</button>
+            </form>
+        </div>
+    </main>
+    <script src="test.js"></script>
+</body>
 </html>
