@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     let currentWord = {}; // Variable to store the current word
+    let points = 0;
+    let highscore = 0;
+    const pointsSpan = document.getElementById('points');
+    const hsSpan = document.getElementById('hs')
     
     // Function to fetch and display all words from the Maori table
     const fetchWords = () => {
@@ -22,9 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userTranslation.toLowerCase() === currentWord.meaning.toLowerCase()) {
             // If correct, add points (you can implement this part)
             fetchWords();
+            points++;
+            if (points >= highscore) {
+                highscore = points;
+            }
+            pointsSpan.innerText = points;
+            hsSpan.innerText = highscore;
         } else {
             // If incorrect, show alert with correct translation
             alert(`Incorrect! The correct translation is: ${currentWord.meaning}`);
+            points = 0;
+            pointsSpan.innerText = points;
         }
         // Clear the input field
         document.getElementById('translationInput').value = '';
